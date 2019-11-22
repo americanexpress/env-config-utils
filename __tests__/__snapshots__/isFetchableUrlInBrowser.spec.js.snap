@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`isFetchableUrlInBrowser throws for undefined 1`] = `"url must not be undefined"`;
+
+exports[`isFetchableUrlInBrowser throws for urls with non http/s protocols 1`] = `"url \\"git+ssh://asdf.com/qwerty\\" must be https or http"`;

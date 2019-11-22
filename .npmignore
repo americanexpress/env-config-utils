@@ -1,0 +1,9 @@
+# test
+__tests__
+.jest-cache
+test-results
+
+# meta
+.eslintrc.json
+.babelrc
+*.tgz

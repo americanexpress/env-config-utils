@@ -1,0 +1,73 @@
+{
+  "name": "@americanexpress/env-config-utils",
+  "version": "2.0.1",
+  "description": "Utilities for runtime configuration validations",
+  "main": "index.js",
+  "scripts": {
+    "test:lint": "eslint --ignore-path .eslintignore --ext .js,.snap .",
+    "test:unit": "jest",
+    "test": "npm run test:unit && npm run test:lint",
+    "build": "babel src --out-dir lib",
+    "prepack": "npm run test && npm run build"
+  },
+  "jest": {
+    "preset": "amex-jest-preset",
+    "collectCoverageFrom": [
+      "src/**"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/americanexpress/env-config-utils.git"
+  },
+  "contributors": [
+    "Andres Escobar <Andres.Escobar@aexp.com> (https://github.com/anescobar1991)",
+    "James Singleton <James.Singleton1@aexp.com> https://github.com/JamesSingleton)",
+    "Jimmy King  <Jimmy.King@aexp.com> (https://github.com/10xLaCroixDrinker)",
+    "Jonathan Adshead <Jonathan.Adshead@aexp.com> (https://github.com/JAdshead)",
+    "Michael Tobia <Michael.M.Tobia@aexp.com> (https://github.com/Francois-Esquire)",
+    "Michael Tomcal <Michael.A.Tomcal@aexp.com> (https://github.com/mtomcal))",
+    "Stephanie Coates  <Stephanie.Coates1@aexp.com> (https://github.com/stephaniecoates)",
+    "Nelly Kiboi <Nelly.J.Kiboi@aexp.com> (https://github.com/nellyk)",
+    "Nickolas Oliver <nickolas.oliver@aexp.com> (https://github.com/PixnBits)"
+  ],
+  "devDependencies": {
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
+    "@semantic-release/changelog": "^3.0.5",
+    "@semantic-release/commit-analyzer": "^6.3.3",
+    "@semantic-release/git": "^7.0.18",
+    "@semantic-release/npm": "^5.3.4",
+    "@semantic-release/release-notes-generator": "^7.3.3",
+    "amex-jest-preset": "^5.0.0",
+    "babel-cli": "^6.24.0",
+    "babel-preset-amex": "^1.0.0",
+    "eslint": "^5.0.0",
+    "eslint-config-amex": "^9.0.0",
+    "husky": "^3.0.9",
+    "jest": "^23.0.0",
+    "rimraf": "^2.6.3",
+    "semantic-release": "^15.13.31"
+  },
+  "license": "Apache-2.0",
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "release": {
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/changelog",
+      "@semantic-release/git",
+      "@semantic-release/npm"
+    ],
+    "branch": "master"
+  },
+  "homepage": "https://github.com/americanexpress/env-config-utils",
+  "bugs": {
+    "url": "https://github.com/americanexpress/env-config-utils/issues"
+  }
+}

@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`isFetchableUrlInNode throws for partial path 1`] = `"url \\"/path\\" must be absolute"`;
+
+exports[`isFetchableUrlInNode throws for undefined 1`] = `"url must not be undefined"`;

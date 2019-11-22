@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`preprocessEnvVar should throw if the default value option is not an expected type 1`] = `"default value must be a string or function, given object"`;
+
+exports[`preprocessEnvVar should throw if the env var is not provided and is not in the list of valid values 1`] = `"must be one of a, b; given <nothing>"`;
+
+exports[`preprocessEnvVar should throw if the name is not a string 1`] = `"the name of the environment variable is required and should be a string"`;
+
+exports[`preprocessEnvVar should throw if the name is not specified 1`] = `"the name of the environment variable is required and should be a string"`;
+
+exports[`preprocessEnvVar should throw if the value is not in the list of valid values 1`] = `"must be one of a, b; given \\"c\\""`;

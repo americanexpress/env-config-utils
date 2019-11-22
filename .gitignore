@@ -1,0 +1,18 @@
+# node/npm
+node_modules
+*.log
+
+# build
+/*.js
+*.tgz
+lib
+# commitlint config file
+!commitlint.config.js
+
+# test
+test-results
+.jest-cache
+
+# misc
+.DS_Store
+.idea
