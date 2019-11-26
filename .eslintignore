@@ -3,6 +3,9 @@ node_modules
 *.log
 lib
 
+#build
+/*.js
+
 # test
 test-results
 
