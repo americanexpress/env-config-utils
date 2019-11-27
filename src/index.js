@@ -13,11 +13,7 @@
  */
 
 const preprocessEnvVar = require('./preprocessEnvVar');
-const isFetchableUrlInBrowser = require('./isFetchableUrlInBrowser');
-const isFetchableUrlInNode = require('./isFetchableUrlInNode');
 
 module.exports = {
   preprocessEnvVar,
-  isFetchableUrlInBrowser,
-  isFetchableUrlInNode,
 };
