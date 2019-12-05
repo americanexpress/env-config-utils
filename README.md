@@ -66,7 +66,7 @@ isFetchableUrlInNode('https://example.aexp.com/path');
 
 ## preprocessEnvVar( [config] )
 
-Loads the local module map and remote module map for local development.
+Processes environment variables and applies validations, defaults, etc...
 
 ### config( you can give this any name)
 
