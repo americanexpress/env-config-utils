@@ -66,7 +66,7 @@ isFetchableUrlInNode('https://example.aexp.com/path');
 
 ## preprocessEnvVar( [config] )
 
-Processes environment variables and applies validations, defaults, etc...
+Processes environment variables and applies validations and defaults.
 
 ### config( you can give this any name)
 
