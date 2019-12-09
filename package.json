@@ -4,10 +4,12 @@
   "description": "Utilities for runtime configuration validations",
   "main": "index.js",
   "scripts": {
+    "clean": "rimraf *.js",
+    "prebuild": "npm run clean",
     "test:lint": "eslint --ignore-path .eslintignore --ext .js,.snap .",
     "test:unit": "jest",
     "test": "npm run test:unit && npm run test:lint",
-    "build": "babel src --out-dir lib",
+    "build": "babel src --out-dir ./ --copy-files",
     "prepack": "npm run test && npm run build"
   },
   "jest": {

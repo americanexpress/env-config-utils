@@ -55,7 +55,6 @@ const { preprocessEnvVar } = require('@americanexpress/env-config-utils');
   }
 
   preprocessEnvVar(config);
-
 const isFetchableUrlInNode = require('@americanexpress/env-config-utils/isFetchableUrlInNode');
 // throws if not a valid url
 isFetchableUrlInNode('https://example.aexp.com/path');
