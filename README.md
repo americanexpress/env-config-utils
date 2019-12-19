@@ -1,10 +1,9 @@
-<h1>
-  <center>
-    <br />
-    <img src="./env-config-utils.png" alt="env-config-utils - One App" width="50%" />
-    <br /><br />
-  </center>
+<h1 align="center">
+  <img src='https://github.com/americanexpress/env-config-utils/raw/master/env-config-utils.png' alt="Env Config Utils - One Amex" width='50%'/>
 </h1>
+
+[![npm](https://img.shields.io/npm/v/@americanexpress/env-config-utils)](https://www.npmjs.com/package/@americanexpress/env-config-utils)
+[![Travis (.org) branch](https://img.shields.io/travis/americanexpress/env-config-utils/master)](https://travis-ci.org/americanexpress/env-config-utils)
 
 > This contains utilities for configuring environment variables including functions for preprocessing.
 
