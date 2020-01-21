@@ -9,8 +9,10 @@
     "test:lint": "eslint --ignore-path .eslintignore --ext .js,.snap .",
     "test:unit": "jest",
     "test": "npm run test:unit && npm run test:lint",
+    "test:lockfile": "lockfile-lint -p package-lock.json -t npm -a npm -o https: -c -i",
     "build": "babel src --out-dir ./ --copy-files",
-    "prepack": "npm run test && npm run build"
+    "prepack": "npm run test && npm run build",
+    "posttest": "npm run test:lockfile"
   },
   "jest": {
     "preset": "amex-jest-preset",
@@ -48,6 +50,7 @@
     "eslint-config-amex": "^9.0.0",
     "husky": "^3.0.9",
     "jest": "^23.0.0",
+    "lockfile-lint": "^3.0.8",
     "rimraf": "^2.6.3",
     "semantic-release": "^15.13.31"
   },
