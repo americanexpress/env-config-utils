@@ -41,7 +41,7 @@ This project adheres to the American Express [Code of Conduct](./CODE_OF_CONDUCT
 
 `npm run build`
 
-Builds the module into the `lib` folder.
+Builds the module into the `dir` folder.
 
 `npm run clean`
 

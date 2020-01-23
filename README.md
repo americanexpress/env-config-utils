@@ -18,8 +18,7 @@ Want to get paid for your contributions to `env-config-utils`?
 * [Features](#-features)
 * [Usage](#-usage)
 * [API](#-api)
-* [Available Scripts](#-available-scripts)
-* [contributing](#-contributing)
+* [Contributing](#-contributing)
 
 ## ✨ Features
 
@@ -144,16 +143,6 @@ const {
 preprocessEnvVar(config);
 
 ```
-
-## 📜 Available Scripts
-
-**`npm run build`**
-
-Builds the module into the `build` folder.
-
-**`npm test`**
-
-Runs `eslint` **and** unit tests on the current branch.
 
 ## 🏆 Contributing
 
