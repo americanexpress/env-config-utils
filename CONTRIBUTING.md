@@ -20,7 +20,7 @@ This project adheres to the American Express [Code of Conduct](./CODE_OF_CONDUCT
 ### Installation
 
 1. Fork the repository `env-config-utils` to your GitHub account.
-2. Afterwards run the following commands in your terminal
+2. Afterwards run the following commands in your terminal to clone the repository. Review this tutorial to learn how to get started cloning the repository [https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
 
     ```bash
     $ git clone https://github.com/<your-github-username>/env-config-utils
@@ -32,28 +32,28 @@ This project adheres to the American Express [Code of Conduct](./CODE_OF_CONDUCT
 3. Install the dependencies by running
 
     ```bash
-    $ cd npm install
+    $ npm install
     ```
 
 4. You can now run any of these scripts from the root folder.
 
 #### Running and cleaning the build files
 
-`npm run build`
+**`npm run build`**
 
 Builds the module into the `dir` folder.
 
-`npm run clean`
+**`npm run clean`**
 
 This removes any existing files generated during the build process and ensures that any new build is clean.
 
 #### Running tests
 
-`npm test`
+**`npm test`**
 
 Runs `eslint` **and** unit tests on the current branch.
 
-`npm posttest`
+**`npm posttest`**
 
 Runs linting on the current branch and checks that the commits follow [conventional commits](https://www.conventionalcommits.org/)
 
