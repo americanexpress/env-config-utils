@@ -59,7 +59,7 @@ Runs linting on the current branch and verifies that the `package-lock.json` fil
 
 ## Submitting a new feature
 
-When submitting a new feature request or enhancement of an existing features please review the following:-
+When submitting a new feature request or enhancement of an existing features please review the following:
 
 ### Is your feature request related to a problem
 
