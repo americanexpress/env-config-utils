@@ -51,7 +51,7 @@
     "eslint-config-amex": "^9.0.0",
     "husky": "^3.0.9",
     "jest": "^23.0.0",
-    "lockfile-lint": "^3.0.8",
+    "lockfile-lint": "^4.1.0",
     "rimraf": "^2.6.3",
     "semantic-release": "^15.13.31"
   },
