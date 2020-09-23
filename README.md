@@ -1,9 +1,9 @@
 <h1 align="center">
-  <img src='https://github.com/americanexpress/env-config-utils/raw/master/env-config-utils.png' alt="Env Config Utils - One Amex" width='50%'/>
+  <img src='https://github.com/americanexpress/env-config-utils/raw/main/env-config-utils.png' alt="Env Config Utils - One Amex" width='50%'/>
 </h1>
 
 [![npm](https://img.shields.io/npm/v/@americanexpress/env-config-utils)](https://www.npmjs.com/package/@americanexpress/env-config-utils)
-[![Travis (.org) branch](https://img.shields.io/travis/americanexpress/env-config-utils/master)](https://travis-ci.org/americanexpress/env-config-utils)
+![Health Check](https://github.com/americanexpress/env-config-utils/workflows/Health%20Check/badge.svg)
 
 > This contains utilities for configuring environment variables including functions for preprocessing.
 
@@ -39,20 +39,21 @@ Checkout the different parameters you can use under the [API](#api) section.
 
 ```js
 const { preprocessEnvVar } = require('@americanexpress/env-config-utils');
-  const config = {
-      name: 'HTTP_PORT',
-      normalize: (input) => {
-        const parsed = parseInt(input, 10);
-        if (Number.isNaN(parsed) || parsed != input) {
-          throw new Error(`env var HTTP_PORT needs to be a valid integer, given "${input}"`);
-        } else {
-          return parsed;
-        }
-      },
-      defaultValue: () => 3000,
-  }
 
-  preprocessEnvVar(config);
+const config = {
+  name: 'HTTP_PORT',
+  normalize: (input) => {
+    const parsed = parseInt(input, 10);
+    if (Number.isNaN(parsed) || parsed != input) {
+      throw new Error(`env var HTTP_PORT needs to be a valid integer, given "${input}"`);
+    } else {
+      return parsed;
+    }
+  },
+  defaultValue: () => 3000,
+};
+
+preprocessEnvVar(config);
 const isFetchableUrlInNode = require('@americanexpress/env-config-utils/isFetchableUrlInNode');
 // throws if not a valid url
 isFetchableUrlInNode('https://example.aexp.com/path');
@@ -159,7 +160,7 @@ Please feel free to open pull requests and see [CONTRIBUTING.md](./CONTRIBUTING.
 ## 🗝️ License
 
 Any contributions made under this project will be governed by the [Apache License
-2.0](https://github.com/americanexpress/env-config-utils/blob/master/LICENSE.txt).
+2.0](https://github.com/americanexpress/env-config-utils/blob/main/LICENSE.txt).
 
 ## 🗣️ Code of Conduct
 
