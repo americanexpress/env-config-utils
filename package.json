@@ -54,7 +54,7 @@
     "jest": "^23.0.0",
     "lockfile-lint": "^4.3.7",
     "rimraf": "^2.6.3",
-    "semantic-release": "^17.1.2"
+    "semantic-release": "^19.0.3"
   },
   "license": "Apache-2.0",
   "husky": {
