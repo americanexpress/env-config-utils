@@ -8,4 +8,4 @@ exports[`preprocessEnvVar should throw if the name is not a string 1`] = `"the n
 
 exports[`preprocessEnvVar should throw if the name is not specified 1`] = `"the name of the environment variable is required and should be a string"`;
 
-exports[`preprocessEnvVar should throw if the value is not in the list of valid values 1`] = `"must be one of a, b; given \\"c\\""`;
+exports[`preprocessEnvVar should throw if the value is not in the list of valid values 1`] = `"must be one of a, b; given "c""`;
