@@ -65,11 +65,11 @@ function preprocessEnvVar(config) {
       validate(value);
     }
   } catch (err) {
-    // eslint-disable-next-line no-console
+    // eslint-disable-next-line no-console -- this is a CLI tool
     console.error(`ERROR (${name}): ${err.message}`);
     throw err;
   }
-  // eslint-disable-next-line no-console
+  // eslint-disable-next-line no-console -- this is a CLI tool
   console.info(`env var ${name}=${value} (${typeof value})`);
   process.env[name] = value;
 }

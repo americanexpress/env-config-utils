@@ -13,7 +13,7 @@
  */
 
 test('preprocessEnvVar is exported', () => {
-  // eslint-disable-next-line global-require
+  // eslint-disable-next-line global-require -- dynamic import
   const { preprocessEnvVar } = require('../src');
 
   expect(preprocessEnvVar).toBeInstanceOf(Function);

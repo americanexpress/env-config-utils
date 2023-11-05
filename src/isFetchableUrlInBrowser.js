@@ -19,7 +19,7 @@ export default function isFetchableUrlInBrowser(urlToTest) {
     throw new Error('url must not be undefined');
   }
   const parsed = url.parse(urlToTest);
-  if (parsed.protocol && !(/https?:/.test(parsed.protocol))) {
+  if (parsed.protocol && !/https?:/.test(parsed.protocol)) {
     throw new Error(`url "${urlToTest}" must be https or http`);
   }
 }
