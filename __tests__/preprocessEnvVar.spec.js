@@ -12,7 +12,7 @@
  * under the License.
  */
 
-/* eslint-disable no-console */
+/* eslint-disable no-console  -- test console */
 const preprocessEnvVar = require('../src/preprocessEnvVar');
 
 describe('preprocessEnvVar', () => {
@@ -58,13 +58,13 @@ describe('preprocessEnvVar', () => {
     ).toThrowErrorMatchingSnapshot();
     expect(console.error).toHaveBeenCalledTimes(1);
     expect(console.error).toHaveBeenCalledWith(
-      'ERROR (all,your,base): the name of the environment variable is required and should be a string' // eslint-disable-line max-len
+      'ERROR (all,your,base): the name of the environment variable is required and should be a string'
     );
   });
 
   it('should normalize values', () => {
     process.env.TEST_ENV_VAR = 'yARr';
-    const normalize = jest.fn(v => v.toLowerCase());
+    const normalize = jest.fn((v) => v.toLowerCase());
     preprocessEnvVar({
       name: 'TEST_ENV_VAR',
       normalize,
@@ -157,3 +157,4 @@ describe('preprocessEnvVar', () => {
     expect(validate).toHaveBeenCalledWith('yarr');
   });
 });
+/* eslint-enable no-console  -- test console */
