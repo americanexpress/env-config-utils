@@ -69,9 +69,11 @@ function preprocessEnvVar(config) {
     console.error(`ERROR (${name}): ${err.message}`);
     throw err;
   }
-  // eslint-disable-next-line no-console -- this is a CLI tool
-  console.info(`env var ${name}=${value} (${typeof value})`);
-  process.env[name] = value;
+  if (value) {
+    // eslint-disable-next-line no-console -- this is a CLI tool
+    console.info(`env var ${name}=${value} (${typeof value})`);
+    process.env[name] = value;
+  }
 }
 
 module.exports = preprocessEnvVar;

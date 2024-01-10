@@ -17,12 +17,11 @@ const preprocessEnvVar = require('../src/preprocessEnvVar');
 
 describe('preprocessEnvVar', () => {
   const origEnvVarValue = process.env.TEST_ENV_VAR;
-  const origConsoleError = console.error;
-  const origConsoleInfo = console.info;
+  jest.spyOn(console, 'error').mockImplementation(() => {});
+  jest.spyOn(console, 'info').mockImplementation(() => {});
 
   beforeEach(() => {
-    console.error = jest.fn();
-    console.info = jest.fn();
+    jest.clearAllMocks();
   });
 
   afterAll(() => {
@@ -31,8 +30,6 @@ describe('preprocessEnvVar', () => {
     } else {
       process.env.TEST_ENV_VAR = origEnvVarValue;
     }
-    console.error = origConsoleError;
-    console.info = origConsoleInfo;
   });
 
   it('should use the env var value from name', () => {
@@ -155,6 +152,15 @@ describe('preprocessEnvVar', () => {
       validate,
     });
     expect(validate).toHaveBeenCalledWith('yarr');
+  });
+
+  it('should handle undefined values with no default', () => {
+    delete process.env.TEST_ENV_VAR;
+    preprocessEnvVar({
+      name: 'TEST_ENV_VAR',
+    });
+    expect(process.env.TEST_ENV_VAR).toBeUndefined();
+    expect(console.info).not.toHaveBeenCalled();
   });
 });
 /* eslint-enable no-console  -- test console */
