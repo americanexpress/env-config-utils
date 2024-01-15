@@ -12,17 +12,15 @@
  * under the License.
  */
 
-/* eslint-disable no-console  -- test console */
 const preprocessEnvVar = require('../src/preprocessEnvVar');
 
 describe('preprocessEnvVar', () => {
   const origEnvVarValue = process.env.TEST_ENV_VAR;
-  const origConsoleError = console.error;
-  const origConsoleInfo = console.info;
+  jest.spyOn(console, 'error').mockImplementation(() => {});
+  jest.spyOn(console, 'info').mockImplementation(() => {});
 
   beforeEach(() => {
-    console.error = jest.fn();
-    console.info = jest.fn();
+    jest.clearAllMocks();
   });
 
   afterAll(() => {
@@ -31,15 +29,14 @@ describe('preprocessEnvVar', () => {
     } else {
       process.env.TEST_ENV_VAR = origEnvVarValue;
     }
-    console.error = origConsoleError;
-    console.info = origConsoleInfo;
   });
 
   it('should use the env var value from name', () => {
     process.env.TEST_ENV_VAR = 'yarr';
     preprocessEnvVar({ name: 'TEST_ENV_VAR' });
     expect(process.env.TEST_ENV_VAR).toEqual('yarr');
-    expect(console.info).toHaveBeenCalledWith('env var TEST_ENV_VAR=yarr (string)');
+    expect(console.info).toHaveBeenCalledTimes(1);
+    expect(console.info).toHaveBeenCalledWith('env var TEST_ENV_VAR="yarr"');
   });
 
   it('should throw if the name is not specified', () => {
@@ -156,5 +153,35 @@ describe('preprocessEnvVar', () => {
     });
     expect(validate).toHaveBeenCalledWith('yarr');
   });
+
+  it('should handle undefined values with no default', () => {
+    delete process.env.TEST_ENV_VAR;
+    preprocessEnvVar({
+      name: 'TEST_ENV_VAR',
+    });
+    expect(process.env.TEST_ENV_VAR).toBeUndefined();
+    expect(console.info).not.toHaveBeenCalled();
+  });
+
+  it('should coerce a boolean false value to a string', () => {
+    // TODO: this is a bug, but it's a breaking change to fix it
+    delete process.env.TEST_ENV_VAR;
+    preprocessEnvVar({
+      name: 'TEST_ENV_VAR',
+      defaultValue: () => false,
+    });
+    expect(process.env.TEST_ENV_VAR).toEqual('false');
+    expect(console.info).toHaveBeenCalledTimes(1);
+    expect(console.info).toHaveBeenCalledWith('env var TEST_ENV_VAR="false"');
+  });
+
+  it('should not set null values', () => {
+    delete process.env.TEST_ENV_VAR;
+    preprocessEnvVar({
+      name: 'TEST_ENV_VAR',
+      defaultValue: () => null,
+    });
+    expect(process.env.TEST_ENV_VAR).toBeUndefined();
+    expect(console.info).not.toHaveBeenCalled();
+  });
 });
-/* eslint-enable no-console  -- test console */

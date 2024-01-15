@@ -18,6 +18,7 @@ const determineDefaultValue = (defaultValue) => {
   if (defaultValueType === 'string') {
     value = defaultValue;
   } else if (defaultValueType === 'function') {
+    // TODO: throw if the returned value is not a string or undefined (breaking change)
     value = defaultValue();
   } else {
     throw new Error(
@@ -65,13 +66,15 @@ function preprocessEnvVar(config) {
       validate(value);
     }
   } catch (err) {
-    // eslint-disable-next-line no-console -- this is a CLI tool
     console.error(`ERROR (${name}): ${err.message}`);
     throw err;
   }
-  // eslint-disable-next-line no-console -- this is a CLI tool
-  console.info(`env var ${name}=${value} (${typeof value})`);
-  process.env[name] = value;
+
+  // eslint-disable-next-line eqeqeq -- don't set both undefined and null
+  if (value != undefined) {
+    process.env[name] = value;
+    console.info(`env var ${name}="${process.env[name]}"`);
+  }
 }
 
 module.exports = preprocessEnvVar;
