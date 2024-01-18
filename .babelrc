@@ -1,3 +1,4 @@
 {
-  "presets": ["amex"]
+  "presets": ["amex"],
+  "plugins": ["add-module-exports"]
 }
