@@ -1,3 +1,10 @@
+## [2.0.4](https://github.com/americanexpress/env-config-utils/compare/v2.0.3...v2.0.4) (2024-01-18)
+
+
+### Bug Fixes
+
+* **exports:** babel update changed exports in breaking manner ([#51](https://github.com/americanexpress/env-config-utils/issues/51)) ([1d010d6](https://github.com/americanexpress/env-config-utils/commit/1d010d6e1bcba63a2430c8fe943933cf569827e4))
+
 ## [2.0.3](https://github.com/americanexpress/env-config-utils/compare/v2.0.2...v2.0.3) (2024-01-18)
 
 

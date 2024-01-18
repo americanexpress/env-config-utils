@@ -1,6 +1,6 @@
 {
   "name": "@americanexpress/env-config-utils",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "Utilities for runtime configuration validations",
   "main": "index.js",
   "scripts": {
