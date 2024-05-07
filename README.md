@@ -1,17 +1,15 @@
 <h1 align="center">
+
+  [One App is now InnerSource](https://github.com/americanexpress/one-app/issues/1393)
+
+  <hr />
+  
   <img src='https://github.com/americanexpress/env-config-utils/raw/main/env-config-utils.png' alt="Env Config Utils - One Amex" width='50%'/>
 </h1>
 
 [![npm](https://img.shields.io/npm/v/@americanexpress/env-config-utils)](https://www.npmjs.com/package/@americanexpress/env-config-utils)
-![Health Check](https://github.com/americanexpress/env-config-utils/workflows/Health%20Check/badge.svg)
 
 > This contains utilities for configuring environment variables including functions for preprocessing.
-
-## 👩‍💻 Hiring 👨‍💻
-
-Want to get paid for your contributions to `env-config-utils`?
-> Send your resume to oneamex.careers@aexp.com
-
 
 ## 📖 Table of Contents
 
